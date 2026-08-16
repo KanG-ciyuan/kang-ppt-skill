@@ -3,7 +3,7 @@ name: kang-ppt-skill
 description: Use when Kang requests his presentation quality standard, several full-size visual or narrative directions before a major deck, evidence-aware presentation design, or a high-quality review of a PPT/PPTX. This Skill governs judgment and quality, then delegates PPTX implementation to the installed Presentations Skill. Exclude ordinary PPT creation without the Kang standard, single-word edits, read-only slide questions, format conversion, native Feishu/Google Slides operations, frontend design, and image-only generation.
 metadata:
   author: Kang
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Kang Presentation Standard
