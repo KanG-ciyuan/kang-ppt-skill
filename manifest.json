@@ -1,0 +1,31 @@
+{
+  "name": "kang-ppt-skill",
+  "version": "0.1.0",
+  "owner": "Kang",
+  "updated_at": "2026-08-16",
+  "status": "public-release-candidate",
+  "maturity_tier": "production",
+  "lifecycle_stage": "local-validation",
+  "entrypoint": "SKILL.md",
+  "dependencies": ["Presentations"],
+  "intent": {
+    "job_to_be_done": "Apply Kang's proportional presentation-design and acceptance standard to major creation, redesign, and quality-review work while delegating PPTX implementation to Presentations.",
+    "target_users": ["Kang", "authorized collaborators using Kang's standard"],
+    "inputs": ["presentation request", "optional source material", "optional PPTX or template", "optional inspected design references"],
+    "outputs": ["task-specific direction decision", "communication job and narrative", "evidence ledger", "quality-gated presentation deliverable when requested"],
+    "exclusions": ["ordinary PPT work without the Kang standard", "read-only slide questions", "format conversion", "native platform slide operations", "frontend design", "image-only generation"]
+  },
+  "permissions": {
+    "network": "read-only research when needed",
+    "file_write": "approved deck and package files",
+    "publish": "authorized public release"
+  },
+  "release_gates": {
+    "package_validation": "verified locally 2026-08-16",
+    "trigger_eval": "verified locally 2026-08-16",
+    "output_eval": "verified locally 2026-08-16",
+    "runtime_deck": "verified locally 2026-08-16",
+    "installation": "missing evidence",
+    "publication": "authorized; pending remote release verification"
+  }
+}

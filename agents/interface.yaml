@@ -1,0 +1,42 @@
+interface:
+  display_name: "Kang Presentation Standard"
+  short_description: "Direct presentation narrative, visual quality, evidence, and full-size delivery review"
+  default_prompt: "Use $kang-ppt-skill to classify this presentation task, choose the proportionate design process, establish the communication job and evidence boundary, and delegate PPTX implementation to the installed Presentations Skill. For major or high-aesthetic work, show three full-size visual and narrative directions before authoring."
+  examples:
+    - "按 Kang 的 PPT 标准，为这份客户方案先给 3 套完整视觉方向"
+    - "直接优化这份月度汇报，保留模板，只改叙事和信息层级"
+    - "检查这份 PPT 的证据、字体、图片、动效和逐页交付质量"
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+    - "agent-skills-compatible"
+  dependencies:
+    - "Presentations"
+  activation:
+    major_or_high_aesthetic: "apply Kang's standard and preview directions unless the user overrides"
+    selective_or_template_work: "apply only when explicitly requested; keep scope direct"
+  execution:
+    judgment_authority: "kang-ppt-skill"
+    pptx_authoring_authority: "Presentations"
+    visual_review: "individual full-size rendered slides plus technical checks"
+  trust:
+    public_claims: "verified, historical, to_verify, or do_not_publish"
+    copied_brand_assets: "forbidden"
+  permissions:
+    research: "read-only when necessary"
+    presentation_write: "delegate to Presentations within approved scope"
+    installation: "not authorized"
+    publication: "not authorized"
+  degradation:
+    inaccessible_reference: "record missing evidence and use inspected local resources or explicitly original exploration"
+    unavailable_presentations_runtime: "stop PPTX authoring and report the blocker"
+gates:
+  trigger_eval: "required"
+  output_contract: "required"
+  technical_check: "required for a real deck"
+  full_size_visual_review: "required for a real deck"
+  installation: "missing evidence"
+  publication: "not authorized"

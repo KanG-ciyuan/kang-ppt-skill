@@ -1,0 +1,44 @@
+{
+  "ok": false,
+  "complete": false,
+  "researched_at": "2026-08-16",
+  "queries": [
+    "presentation design narrative visual direction skill",
+    "PowerPoint quality review evidence slide design"
+  ],
+  "metric_semantics": {
+    "skills_sh_installs": "ecosystem install telemetry; not ratings or correctness",
+    "skillsmp_repo_stars": "GitHub repository stars; not installs, ratings, or skill-specific quality",
+    "cross_catalog_score": "not calculated; metrics remain separate"
+  },
+  "query_runs": [
+    {
+      "query": "presentation design narrative visual direction skill",
+      "skills_sh": "error",
+      "skillsmp": "error",
+      "skills_sh_error": "Command '['npx', '--yes', 'skills', 'find', 'presentation design narrative visual direction skill']' timed out after 30.0 seconds",
+      "skillsmp_error": "SkillsMP request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    },
+    {
+      "query": "PowerPoint quality review evidence slide design",
+      "skills_sh": "error",
+      "skillsmp": "error",
+      "skills_sh_error": "Command '['npx', '--yes', 'skills', 'find', 'PowerPoint quality review evidence slide design']' timed out after 30.0 seconds",
+      "skillsmp_error": "SkillsMP request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    }
+  ],
+  "candidate_family_count": 0,
+  "candidates": [],
+  "missing_evidence": [
+    "skills.sh `presentation design narrative visual direction skill`: Command '['npx', '--yes', 'skills', 'find', 'presentation design narrative visual direction skill']' timed out after 30.0 seconds",
+    "SkillsMP `presentation design narrative visual direction skill`: SkillsMP request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>",
+    "skills.sh `PowerPoint quality review evidence slide design`: Command '['npx', '--yes', 'skills', 'find', 'PowerPoint quality review evidence slide design']' timed out after 30.0 seconds",
+    "SkillsMP `PowerPoint quality review evidence slide design`: SkillsMP request failed: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  ],
+  "next_steps": [
+    "shortlist by job relevance and role coverage, not combined popularity",
+    "open canonical GitHub source and inspect SKILL.md before adoption",
+    "verify license, maintenance, permissions, security, duplication, and rating evidence",
+    "write keep/adapt/reject/invent synthesis before authoring"
+  ]
+}

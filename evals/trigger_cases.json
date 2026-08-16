@@ -1,0 +1,46 @@
+{
+  "recommended_threshold": 0.34,
+  "description_required_concepts": [
+    "presentation_artifact",
+    "kang_standard",
+    "visual_direction",
+    "quality_review"
+  ],
+  "positive_concepts": {
+    "presentation_artifact": [
+      "presentation", "presentations", "deck", "ppt", "pptx", "演示", "幻灯片", "客户方案", "客户提案", "项目汇报"
+    ],
+    "kang_standard": [
+      "kang", "kang presentation standard", "presentation quality standard", "kang's presentation quality standard", "ppt 标准", "演示标准", "我的演示标准"
+    ],
+    "visual_direction": [
+      "full size visual", "visual direction", "narrative direction", "narrative and visual", "high aesthetic", "three directions", "视觉方向", "叙事和视觉", "叙事", "审美", "版式方向", "三套完整"
+    ],
+    "quality_review": [
+      "quality review", "evidence aware", "evidence", "full slide review", "delivery quality", "证据", "字号", "图片", "逐页", "交付质量", "有来源"
+    ]
+  },
+  "negative_patterns": [
+    "正常制作", "错别字", "读取", "飞书幻灯片", "网页的按钮", "效果图", "替换本月数字", "转成 pdf", "不需要 ppt"
+  ],
+  "should_trigger": [
+    {"text": "按 Kang 的 PPT 标准给这个客户方案先出三套完整视觉方向", "family": "major_new"},
+    {"text": "用 kang-ppt-skill 重做这份项目汇报的叙事和视觉", "family": "major_redesign"},
+    {"text": "检查这份客户提案的证据、字号、图片和逐页交付质量", "family": "quality_review"},
+    {"text": "按我的演示标准制作一份有来源的 AI 教学 PPT", "family": "teaching"},
+    {"text": "这个 PPT 审美要求高，先给我不同叙事和版式方向", "family": "visual_direction"}
+  ],
+  "should_not_trigger": [
+    {"text": "帮我正常制作一份三页 PPT", "family": "ordinary_presentations"},
+    {"text": "把第 4 页的错别字改掉", "family": "single_edit"},
+    {"text": "读取这个 PPT 第三页的表格数据", "family": "read_only_qa"},
+    {"text": "在飞书幻灯片新建一页", "family": "lark_slides"},
+    {"text": "把网页的按钮做得更好看", "family": "frontend"},
+    {"text": "生成一张建筑室内效果图", "family": "image"}
+  ],
+  "near_neighbor": [
+    {"text": "按照现有公司模板替换本月数字，布局不要变", "family": "template_execution"},
+    {"text": "把 PPTX 转成 PDF", "family": "conversion"},
+    {"text": "帮我写一份客户提案文案，不需要 PPT", "family": "writing"}
+  ]
+}

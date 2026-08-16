@@ -1,2 +1,92 @@
 # kang-ppt-skill
-Use when Kang requests his presentation quality standard, several full-size visual or narrative directions before a major deck, evidence-aware presentation design, or a high-quality review of a PPT/PPTX. This Skill governs judgment and quality, then delegates PPTX implementation to the installed Pre
+
+> 在制作 PPTX 之前先把沟通目标、叙事、视觉方向和证据边界想清楚，并在交付前逐页检查真实成品。
+
+这是 Kang 的个人演示质量标准层。它不重新实现 PowerPoint 引擎，而是把任务分类、视觉方向、叙事证据、动效判断和交付门禁交给一套可复用规则；真正的 PPTX 制作、模板继承、渲染和溢出检查继续由已安装的 `Presentations` Skill 完成。
+
+当前版本已按公开发布标准准备；本地工作区不会自动安装，使用时可按需从公开仓库发现并安装。
+
+## 安装
+
+```bash
+npx skills add KanG-ciyuan/kang-ppt-skill
+```
+
+安装后，可通过自然语言提及“按 Kang 的 PPT 标准”来调用；普通 PPT 任务仍直接交给 `Presentations` Skill。
+
+## 适合什么任务
+
+- 大型客户提案、项目案例、产品介绍或教学 PPT，需要先比较视觉与叙事方向。
+- 已有 PPT 需要改善信息层级、证据、字体、图片、动效和章节节奏。
+- 交付前需要同时通过技术检查和逐页视觉检查。
+- 希望保持长期一致的质量标准，但不把字体、颜色和页面结构写死。
+
+普通 PPT 制作、单字修改、格式转换和只读问答直接交给 `Presentations`，不需要额外触发本标准。
+
+## 你可以直接这样说
+
+- “按 Kang 的 PPT 标准，为这份客户方案先给 3 套完整视觉方向。”
+- “直接优化这份月度汇报，保留模板，只改叙事和信息层级。”
+- “检查这份 PPT 的证据、字体、图片、动效和逐页交付质量。”
+
+## 默认流程
+
+1. 明确受众、目的、希望对方理解或采取的行动。
+2. 判断任务规模和模板权威性。
+3. 大型或高审美任务先展示 3 套可读的完整视觉方向；小型和明确模板任务直接执行。
+4. 建立 `verified / historical / to_verify / do_not_publish` 证据账本。
+5. 确定叙事弧线和每页唯一任务。
+6. 调用 `Presentations` 制作真实 PPTX。
+7. 每页完整渲染并逐页检查，最后才用拼图检查整体节奏。
+
+## 核心边界
+
+- 不复制现有 PPT 渲染器、模板库或依赖运行时。
+- 不固定一种字体、颜色、字号或页面结构。
+- 可以借鉴成熟公开设计的机制，但不复制品牌、Logo、专属素材或无授权表达。
+- 不虚构数据、客户、评价、截图、结果或来源。
+- 不用无意义旋转、漂浮和循环动效冒充高级感。
+- 技术测试通过但视觉检查失败时，仍不能交付。
+
+## 本地验证
+
+```bash
+python3 -m unittest discover -s tests -v
+python3 /path/to/qiaomu-meta-skill/scripts/validate_skill.py .
+python3 /path/to/qiaomu-meta-skill/scripts/trigger_eval.py . --cases evals/trigger_cases.json --output reports/trigger-eval.json
+python3 scripts/output_eval.py --cases evals/output_cases.json --output reports/output-eval.json
+```
+
+发布流程不会把工作区副本自动同步到本机全局 Skill 目录；公开仓库的发现与安装命令需要通过 Release 验证后才视为已核验。
+
+## 前置条件
+
+- [ ] 已安装或可调用官方 `Presentations` Skill；本包不复制 PPTX 引擎、模板库或运行时。
+- [ ] 进行真实 PPTX 制作时，使用工作区提供的 Node.js 与渲染工具链，不自行安装替代依赖。
+- [ ] 对外展示的事实、截图和素材已经完成来源核验，并区分 `verified / historical / to_verify / do_not_publish`。
+- [ ] 发布或安装前，已获得对应 GitHub 仓库和本地环境的明确授权。
+
+完整的包验证、触发评估、输出评估和真实 PPT 案例会记录在 `reports/`。
+
+## Troubleshooting
+
+| 问题 | 原因 | 处理 |
+|---|---|---|
+| 每个任务都要求三套方向 | 任务规模判断失效 | 小型、模板明确或局部修改应直接执行 |
+| 方向只是缩略拼盘 | 预览不具备可读性 | 分别展示完整尺寸代表页，再说明叙事和动效逻辑 |
+| 技术检查通过但仍不好看 | 技术门禁不能证明审美 | 逐页检查层级、密度、节奏、素材和一致性并继续修改 |
+| 用户模板被新风格覆盖 | 未把模板作为视觉权威 | 回到原母版和布局，撤销无授权风格混用 |
+| 文案有说服力但没有证据 | 把创作当成事实 | 删除、收窄或标记 `to_verify` |
+| 找不到公开安装命令 | Skill 尚未发布 | 保持本地使用，不编造仓库或安装证据 |
+
+## 当前证据
+
+- 5 项包契约测试与输出评估测试通过。
+- 14 个触发边界用例通过，当前记录中无误触发或漏触发。
+- 已生成 1 份 7 页真实装修客户提案测试稿，逐页渲染、全尺寸检查并通过溢出检测。
+- 本地运行案例只验证本次流程与成品，不证明跨模型稳定性、真实客户偏好或业务转化。
+- 安装、公开发布、跨模型稳定性、真实客户偏好和业务转化效果仍为 `missing evidence`。
+
+## License
+
+本项目采用 MIT License。仓库发布时会保留依赖技能的必要归属说明，但不包含任何第三方个人头像、二维码或个人资料。
