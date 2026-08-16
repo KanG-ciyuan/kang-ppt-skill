@@ -3,7 +3,7 @@
 ## Result
 
 - Package: `kang-ppt-skill`
-- Version: `0.1.2`
+- Version: `0.1.3`
 - Owner: `Kang`
 - Local path: `/Users/kang/Documents/skill类型/kang-ppt-skill`
 - State: local production candidate

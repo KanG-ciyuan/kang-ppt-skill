@@ -2,6 +2,10 @@
 
 > 在制作 PPTX 之前先把沟通目标、叙事、视觉方向和证据边界想清楚，并在交付前逐页检查真实成品。
 
+[![Release](https://img.shields.io/github/v/release/KanG-ciyuan/kang-ppt-skill?display_name=tag&sort=semver&style=flat-square)](https://github.com/KanG-ciyuan/kang-ppt-skill/releases)
+[![License](https://img.shields.io/github/license/KanG-ciyuan/kang-ppt-skill?style=flat-square)](LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/KanG-ciyuan/kang-ppt-skill?style=flat-square)](https://github.com/KanG-ciyuan/kang-ppt-skill/commits/main)
+
 这是 Kang 的个人演示质量标准层。它不重新实现 PowerPoint 引擎，而是把任务分类、视觉方向、叙事证据、动效判断和交付门禁交给一套可复用规则；真正的 PPTX 制作、模板继承、渲染和溢出检查继续由已安装的 `Presentations` Skill 完成。
 
 当前版本已按公开发布标准准备；本地工作区不会自动安装，使用时可按需从公开仓库发现并安装。
