@@ -1,0 +1,141 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-08-16",
+  "package": {
+    "name": "kang-ppt-skill",
+    "version": "0.1.0",
+    "owner": "Kang",
+    "maturity_tier": "production",
+    "lifecycle_stage": "local-validation",
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "Use when Kang requests his presentation quality standard, several full-size visual or narrative directions before a major deck, evidence-aware presentation design, or a high-quality review of a PPT/PPTX. This Skill governs judgment and quality, then delegates PPTX implementation to the installed Presentations Skill. Exclude ordinary PPT creation without the Kang standard, single-word edits, read-only slide questions, format conversion, native Feishu/Google Slides operations, frontend design, and image-only generation.",
+    "job_to_be_done": "Apply Kang's proportional presentation-design and acceptance standard to major creation, redesign, and quality-review work while delegating PPTX implementation to Presentations.",
+    "target_users": [
+      "Kang",
+      "authorized collaborators using Kang's standard"
+    ],
+    "inputs": [
+      "presentation request",
+      "optional source material",
+      "optional PPTX or template",
+      "optional inspected design references"
+    ],
+    "outputs": [
+      "task-specific direction decision",
+      "communication job and narrative",
+      "evidence ledger",
+      "quality-gated presentation deliverable when requested"
+    ],
+    "exclusions": [
+      "ordinary PPT work without the Kang standard",
+      "read-only slide questions",
+      "format conversion",
+      "native platform slide operations",
+      "frontend design",
+      "image-only generation"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "按 Kang 的 PPT 标准给这个客户方案先出三套完整视觉方向",
+      "用 kang-ppt-skill 重做这份项目汇报的叙事和视觉",
+      "检查这份客户提案的证据、字号、图片和逐页交付质量",
+      "按我的演示标准制作一份有来源的 AI 教学 PPT",
+      "这个 PPT 审美要求高，先给我不同叙事和版式方向"
+    ],
+    "should_not_trigger": [
+      "帮我正常制作一份三页 PPT",
+      "把第 4 页的错别字改掉",
+      "读取这个 PPT 第三页的表格数据",
+      "在飞书幻灯片新建一页",
+      "把网页的按钮做得更好看",
+      "生成一张建筑室内效果图"
+    ],
+    "near_neighbor": [
+      "按照现有公司模板替换本月数字，布局不要变",
+      "把 PPTX 转成 PDF",
+      "帮我写一份客户提案文案，不需要 PPT"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references/narrative-and-evidence.md",
+      "references/quality-gates.md",
+      "references/task-and-process-routing.md",
+      "references/visual-direction-method.md"
+    ],
+    "scripts": [
+      "scripts/output_eval.py"
+    ],
+    "evals": [
+      "evals/output_cases.json",
+      "evals/trigger_cases.json"
+    ],
+    "reports": [
+      "reports/creation-handoff.md",
+      "reports/output-eval.json",
+      "reports/prior-art-candidates.json",
+      "reports/prior-art-research.md",
+      "reports/reuse-decision.md",
+      "reports/runtime-case-renovation-customer-proposal.md",
+      "reports/skill-ir.json",
+      "reports/trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "agent-skills",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "major_or_high_aesthetic": "apply Kang's standard and preview directions unless the user overrides",
+      "selective_or_template_work": "apply only when explicitly requested; keep scope direct"
+    },
+    "execution": {
+      "judgment_authority": "kang-ppt-skill",
+      "pptx_authoring_authority": "Presentations",
+      "visual_review": "individual full-size rendered slides plus technical checks"
+    },
+    "trust": {
+      "public_claims": "verified, historical, to_verify, or do_not_publish",
+      "copied_brand_assets": "forbidden"
+    },
+    "permissions": {
+      "research": "read-only when necessary",
+      "presentation_write": "delegate to Presentations within approved scope",
+      "installation": "not authorized",
+      "publication": "not authorized"
+    },
+    "degradation": {
+      "inaccessible_reference": "record missing evidence and use inspected local resources or explicitly original exploration",
+      "unavailable_presentations_runtime": "stop PPTX authoring and report the blocker"
+    }
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_contract": "required",
+    "technical_check": "required for a real deck",
+    "full_size_visual_review": "required for a real deck",
+    "installation": "missing evidence",
+    "publication": "not authorized"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

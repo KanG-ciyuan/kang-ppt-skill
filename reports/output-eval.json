@@ -1,0 +1,173 @@
+{
+  "ok": true,
+  "summary": {
+    "total_cases": 4,
+    "passed": 4,
+    "failed": 0,
+    "missing_evidence": 0
+  },
+  "results": [
+    {
+      "id": "major-new",
+      "input": "从零制作一份高审美客户提案",
+      "passed": true,
+      "checks": [
+        {
+          "mechanism": "communication_job",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/narrative-and-evidence.md"
+          ]
+        },
+        {
+          "mechanism": "three_full_size_directions",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/task-and-process-routing.md",
+            "references/visual-direction-method.md"
+          ]
+        },
+        {
+          "mechanism": "evidence_ledger",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/narrative-and-evidence.md"
+          ]
+        },
+        {
+          "mechanism": "presentations_delegate",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "SKILL.md",
+            "references/task-and-process-routing.md"
+          ]
+        },
+        {
+          "mechanism": "full_slide_review",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/quality-gates.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "small-edit",
+      "input": "只修正一页标题换行",
+      "passed": true,
+      "checks": [
+        {
+          "mechanism": "direct_execution",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/task-and-process-routing.md"
+          ]
+        },
+        {
+          "mechanism": "scope_lock",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/task-and-process-routing.md"
+          ]
+        },
+        {
+          "mechanism": "presentations_delegate",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "SKILL.md",
+            "references/task-and-process-routing.md"
+          ]
+        },
+        {
+          "mechanism": "three_full_size_directions",
+          "kind": "forbidden",
+          "passed": true,
+          "evidence": [
+            "selective-edit routing row"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "template-authority",
+      "input": "基于用户给定 PPTX 更新内容",
+      "passed": true,
+      "checks": [
+        {
+          "mechanism": "template_is_authoritative",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/task-and-process-routing.md"
+          ]
+        },
+        {
+          "mechanism": "no_style_mix",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/task-and-process-routing.md"
+          ]
+        },
+        {
+          "mechanism": "full_slide_review",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/quality-gates.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "claim-safety",
+      "input": "缺少真实数据但希望写得更有说服力",
+      "passed": true,
+      "checks": [
+        {
+          "mechanism": "remove_qualify_or_to_verify",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/narrative-and-evidence.md"
+          ]
+        },
+        {
+          "mechanism": "no_invented_metrics",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/narrative-and-evidence.md"
+          ]
+        },
+        {
+          "mechanism": "missing_evidence",
+          "kind": "required",
+          "passed": true,
+          "evidence": [
+            "references/visual-direction-method.md"
+          ]
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "evidence": {
+    "rule_contract": "recorded fixture",
+    "runtime_visual_review": "verified",
+    "runtime_report": "/Users/kang/Documents/skill类型/kang-ppt-skill/reports/runtime-case-renovation-customer-proposal.md"
+  },
+  "method_limitations": [
+    "Keyword and file-presence checks verify recorded rule coverage, not presentation beauty or model compliance.",
+    "A runtime visual pass requires a real deck, individual full-size slide inspection, and a technical overflow check.",
+    "No provider-backed, cross-model, customer-preference, or business-impact evidence is claimed."
+  ]
+}

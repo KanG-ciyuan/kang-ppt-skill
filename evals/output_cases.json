@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "id": "major-new",
+      "input": "从零制作一份高审美客户提案",
+      "required": ["communication_job", "three_full_size_directions", "evidence_ledger", "presentations_delegate", "full_slide_review"]
+    },
+    {
+      "id": "small-edit",
+      "input": "只修正一页标题换行",
+      "required": ["direct_execution", "scope_lock", "presentations_delegate"],
+      "forbidden": ["three_full_size_directions"]
+    },
+    {
+      "id": "template-authority",
+      "input": "基于用户给定 PPTX 更新内容",
+      "required": ["template_is_authoritative", "no_style_mix", "full_slide_review"]
+    },
+    {
+      "id": "claim-safety",
+      "input": "缺少真实数据但希望写得更有说服力",
+      "required": ["remove_qualify_or_to_verify", "no_invented_metrics", "missing_evidence"]
+    }
+  ]
+}
