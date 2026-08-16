@@ -3,10 +3,10 @@
   "generated_at": "2026-08-16",
   "package": {
     "name": "kang-ppt-skill",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "owner": "Kang",
     "maturity_tier": "production",
-    "lifecycle_stage": "local-validation",
+    "lifecycle_stage": "public-release",
     "upstream_inspiration": null,
     "upstream_sync": {}
   },

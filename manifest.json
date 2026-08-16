@@ -1,11 +1,11 @@
 {
   "name": "kang-ppt-skill",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "owner": "Kang",
   "updated_at": "2026-08-16",
-  "status": "public-release-candidate",
+  "status": "published",
   "maturity_tier": "production",
-  "lifecycle_stage": "local-validation",
+  "lifecycle_stage": "public-release",
   "entrypoint": "SKILL.md",
   "dependencies": ["Presentations"],
   "intent": {
@@ -26,6 +26,6 @@
     "output_eval": "verified locally 2026-08-16",
     "runtime_deck": "verified locally 2026-08-16",
     "installation": "missing evidence",
-    "publication": "authorized; pending remote release verification"
+    "publication": "public release enabled; verify the current tag remotely"
   }
 }
