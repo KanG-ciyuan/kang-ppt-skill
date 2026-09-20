@@ -343,7 +343,7 @@ python3 scripts/research_prior_art.py \
   "presentation design narrative visual direction skill" \
   "PowerPoint quality review evidence slide design" \
   --summary \
-  --output /Users/kang/Documents/skill类型/kang-presentation-standard/reports/prior-art-candidates.json
+  --output reports/prior-art-candidates.json
 ```
 
 Expected: either a candidate JSON file or recorded catalog failures. Do not install candidates or execute their scripts. If the network/catalog is unavailable, mark it `missing evidence` and continue with the installed first-party `Presentations` Skill and inspected local/open references.
@@ -380,7 +380,7 @@ No Git step under current authorization.
 Run:
 
 ```bash
-python3 /Users/kang/Documents/skill类型/kang-meta-skill/.worktrees/kang-meta-v2-release/scripts/validate_skill.py /Users/kang/Documents/skill类型/kang-presentation-standard
+python3 <kang-meta-skill-worktree>/scripts/validate_skill.py .
 ```
 
 Expected: `ok: true`, zero failures. Warnings must be reviewed rather than ignored.
@@ -390,8 +390,8 @@ Expected: `ok: true`, zero failures. Warnings must be reviewed rather than ignor
 Run:
 
 ```bash
-python3 /Users/kang/Documents/skill类型/kang-meta-skill/.worktrees/kang-meta-v2-release/scripts/trigger_eval.py \
-  /Users/kang/Documents/skill类型/kang-presentation-standard \
+python3 <kang-meta-skill-worktree>/scripts/trigger_eval.py \
+  . \
   --cases evals/trigger_cases.json \
   --output reports/trigger-eval.json
 ```
@@ -423,9 +423,9 @@ Expected: structure/routing cases pass; the real-runtime case remains `missing e
 Run:
 
 ```bash
-python3 /Users/kang/Documents/skill类型/kang-meta-skill/.worktrees/kang-meta-v2-release/scripts/export_skill_ir.py \
-  /Users/kang/Documents/skill类型/kang-presentation-standard \
-  --output /Users/kang/Documents/skill类型/kang-presentation-standard/reports/skill-ir.json
+python3 <kang-meta-skill-worktree>/scripts/export_skill_ir.py \
+  . \
+  --output reports/skill-ir.json
 ```
 
 Confirm the IR names `Presentations` as a dependency, records no publication/install proof, and describes the visual-review evidence boundary.
@@ -494,7 +494,7 @@ No Git step under current authorization.
 
 Read:
 
-- `/Users/kang/Documents/skill类型/obsidian-review/知识库/🏗 项目档案·renovation-agent.md`;
+- the local project-archive note `项目档案·renovation-agent.md` (kept outside this repository);
 - the current local renovation-agent source if its path is available;
 - only the local files needed to verify current architecture, scoring, integration, and UI claims.
 
@@ -630,8 +630,8 @@ Run independently and read every result:
 
 ```bash
 python3 -m unittest discover -s tests -v
-python3 /Users/kang/Documents/skill类型/kang-meta-skill/.worktrees/kang-meta-v2-release/scripts/validate_skill.py .
-python3 /Users/kang/Documents/skill类型/kang-meta-skill/.worktrees/kang-meta-v2-release/scripts/trigger_eval.py . --cases evals/trigger_cases.json --output reports/trigger-eval.json
+python3 <kang-meta-skill-worktree>/scripts/validate_skill.py .
+python3 <kang-meta-skill-worktree>/scripts/trigger_eval.py . --cases evals/trigger_cases.json --output reports/trigger-eval.json
 python3 scripts/output_eval.py --cases evals/output_cases.json --runtime-report reports/runtime-case-renovation-customer-proposal.md --output reports/output-eval.json
 ```
 

@@ -5,7 +5,7 @@
 - Package: `kang-ppt-skill`
 - Version: `0.1.3`
 - Owner: `Kang`
-- Local path: `/Users/kang/Documents/skill类型/kang-ppt-skill`
+- Local path: `kang-ppt-skill` (package directory; machine-independent)
 - State: local production candidate
 - Installation: not authorized; no install evidence
 - Publication: not authorized; no public repository or release evidence

@@ -163,7 +163,7 @@
   "evidence": {
     "rule_contract": "recorded fixture",
     "runtime_visual_review": "verified",
-    "runtime_report": "/Users/kang/Documents/skill类型/kang-ppt-skill/reports/runtime-case-renovation-customer-proposal.md"
+    "runtime_report": "reports/runtime-case-renovation-customer-proposal.md"
   },
   "method_limitations": [
     "Keyword and file-presence checks verify recorded rule coverage, not presentation beauty or model compliance.",
